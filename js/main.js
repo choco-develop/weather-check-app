@@ -6,7 +6,8 @@ fetch(`http://api.weatherstack.com/current?access_key=5668ac9dea43d3dd6215a4a687
      .then(res=>res.json())
      .then(data=>{
         console.log(data)
-        document.querySelector('img').src=data.request.current.weather_icons[0]
+        document.querySelector('img').src=data.current.weather_icons[0]
+        document.querySelector('#description').innerText=data.current.weather_descriptions[0]
      })
      .catch(err=>{
         console.log(`error $err`)
