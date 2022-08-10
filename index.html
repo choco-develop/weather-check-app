@@ -1,17 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather Checck app</title>
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather Checck app</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
-<input type="text" value="">
-<button id="getData"> get Data</button>
-<img src="" alt="">
-<span id="description"></span>
+<header>
+  <h1>Weather Check</h1>
+  <ul>
+    <li>About</li>
+    <li>Home</li>
+    <li>Change default location</li>
+    <li>Newsletter </li>
+    <li>Check Weather</li>
+
+
+  </ul>
+</header>
+<section id="welcome">
+  <div>
+    <p>Welcome! <br> I am your favorite travel companion. <br>
+      Get current weather updates with just a click
+    </p>
+  </div>
+  <div><button id="getStarted">GET STARTED</button></div>
+</section>
+<section id="form">
+  <input class="mustFill"  type="text" name="" id="defaultCountry" placeholder="Select Country">
+  <input class="mustFill" type="text" name="" id="defaultCity" placeholder="Select City">
+  <input  class="mustFill"type="email" name="" id="enterEmail" placeholder="somebody@yahoo.com">
+  <button class="mustFill" type="submit" id="save">SAVE</button>
+</section>
+<main id="main">
+  <input type="text" value="" id="location" placeholder="Select Location">
+  <button id="getData"> GET DATA</button>
+  <img src="" alt="">
+  <h5 id="description"></h5>
+  <h5 id="temperature"></h5>
+  <h5 id="dateTime"></h5>
+</main>
+
 <body>
-  <script src="js/main.js"></script>  
+  <script src="js/main.js"></script>
 </body>
+
 </html>
