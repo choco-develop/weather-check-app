@@ -1,9 +1,18 @@
 document.querySelector('#form').style.display="none"
-
 let defaultCity=document.querySelector('#defaultCity').value
+let defaultCountry=document.querySelector('#defaultCountry').value
+let mailBox=document.querySelector('#enterEmail').value
+localStorage.setItem('city',defaultCity)
+localStorage.setItem('country',defaultCountry)
+localStorage.setItem('mail',mailBox)
 
 
-
+/*if(localStorage.getItem('city')!= true){
+    document.querySelector('#save').disabled=false 
+}
+else{
+    document.querySelector('#save').disabled=true
+}*/
 document.querySelector('#getStarted').addEventListener('click',getStarted)
  function getStarted  ()  {
     document.querySelector('#welcome').style.display="none"
@@ -12,11 +21,9 @@ document.querySelector('#getStarted').addEventListener('click',getStarted)
  }
 document.querySelector('#save').addEventListener('click',weatherProper)
 function weatherProper(){
-    if(document.querySelectorAll(".mustFill").value ===''){
-        document.querySelector('#save').disabled=true
-    }
+    
     document.querySelector('#form').style.display="none" 
-   document.querySelector("#main").style.display="inline"
+    document.querySelector("#main").style.display="inline"
    
 }
 
@@ -35,7 +42,8 @@ function weatherProper(){
 
 document.querySelector('#getData').addEventListener('click',weatherDetails)
 function weatherDetails(){
-let location=document.querySelector('#location').value
+//let location=document.querySelector('#location').value
+let location =localStorage.getItem('city')
 fetch(`http://api.weatherstack.com/current?access_key=5668ac9dea43d3dd6215a4a68728d7d5&query=${location}`)
      .then(res=>res.json())
      .then(data=>{
