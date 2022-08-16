@@ -39,6 +39,9 @@ section#form{
     align-items: center;
    
 }
+#form{
+    display: none;
+}
 
 input{
     width: 50%;
